@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    image: phanithstar/flask:v1.0
+    build: .
+    ports:
+      - "5000:5000"
+  redis:
+    image: "redis:alpine"
+

@@ -1,0 +1,30 @@
+Build Project using Docker
+	App Demo: Flask framework
+	Environment:
+		Development
+		Testing
+		Staging
+		Production
+	Deployment:
+		Standalone Docker
+			Start services
+				docker-compose -f docker-compose.yml compose.[development].yml up 
+			Stop services
+				docker-compose down --volumes
+		Docker Swarm
+			Start services
+				docker stack deploy --compose-file compose.stack.yml flask-demo
+			Stop services
+				docker stack rm flask-demo	
+	Access:
+		Production
+			http://localhost
+		Other
+			http://localhost:5000
+	App Version: (git checkout v1.0)
+		v1.0
+			/
+		v2.0
+			/hello
+		v3.0
+			/name/<name>

@@ -1,0 +1,7 @@
+version: '3'
+services:
+  web:
+    image: phanithstar/flaskapp:v1.0
+    build: .
+  redis:
+    image: "redis:alpine"
