@@ -2,10 +2,13 @@ import time
 
 import redis
 from flask import Flask
+from os import environ
 
 
 app = Flask(__name__)
 cache = redis.Redis(host='redis', port=6379)
+app.config['FLASK_ENV'] = environ.get('FLASK_ENV')
+mode = app.config['FLASK_ENV']
 
 
 def get_hit_count():
@@ -30,3 +33,7 @@ def hello():
 def index():
     return "Hello, this is a hello method!\n"
 
+
+@app.route('/name/<name>')
+def get_name(name):
+    return "Hello ," + name + " from " + str(mode) + ".\n"
