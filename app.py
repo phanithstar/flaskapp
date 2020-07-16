@@ -24,3 +24,9 @@ def get_hit_count():
 def hello():
     count = get_hit_count()
     return 'Hello from Docker Fan! I have been seen {} times.\n Refresh it again.'.format(count)
+
+
+@app.route('/hello')
+def index():
+    return "Hello, this is a hello method!\n"
+
